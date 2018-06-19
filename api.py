@@ -29,15 +29,6 @@ class EmployeefavSports(db.Model):
 
 db.create_all()
 
-@app.route("/sports", methods=['POST'])
-def postingSport():
-    result=request.get_json(["sportsName"]),request.get_json(["empolyeeId"])
-    db.session.add(result)
-    db.session.commit()
-    return(jsonify(msg="Data saved successfully "))
-
-
-
 @app.route("/",methods = ['GET','POST'])
 def getingPostingData():
     if request.method=='GET':
